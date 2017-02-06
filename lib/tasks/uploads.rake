@@ -594,17 +594,17 @@ task "uploads:analyze", [:cache_path, :limit] => :environment do |_, args|
   uploads_count = Upload.count
   optimized_images_count = OptimizedImage.count
 
-  puts <<~REPORT
-  Report for '#{current_db}'
-  -----------#{'-' * current_db.length}
-  Number of `Upload` records in DB: #{uploads_count}
-  Number of `OptimizedImage` records in DB: #{optimized_images_count}
-  **Total DB records: #{uploads_count + optimized_images_count}**
-
-  Number of images in uploads folder: #{paths_count}
-  ------------------------------------#{'-' * paths_count.to_s.length}
-
-  REPORT
+  # puts <<~REPORT
+  # Report for '#{current_db}'
+  # -----------#{'-' * current_db.length}
+  # Number of `Upload` records in DB: #{uploads_count}
+  # Number of `OptimizedImage` records in DB: #{optimized_images_count}
+  # **Total DB records: #{uploads_count + optimized_images_count}**
+  #
+  # Number of images in uploads folder: #{paths_count}
+  # ------------------------------------#{'-' * paths_count.to_s.length}
+  #
+  # REPORT
 
   helper = Class.new do
     include ActionView::Helpers::NumberHelper
